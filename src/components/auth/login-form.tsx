@@ -36,9 +36,7 @@ export function LoginForm() {
         setIsLoading(false);
         return;
       }
-
-      // Login bem-sucedido - redirecionamento é feito pela server action
-    } catch (error) {
+    } catch (error: any) {
       setError("root", {
         message: "Erro ao fazer login. Tente novamente.",
       });

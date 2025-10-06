@@ -29,7 +29,7 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Suspense fallback={null}>{children}</Suspense>
+        <Suspense fallback={<p>Loading feed...</p>}>{children}</Suspense>
         <Toaster />
       </body>
     </html>

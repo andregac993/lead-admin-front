@@ -2,8 +2,11 @@ import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import {loginSchema} from "@/lib/validations/auth";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL!;
-
+const API_BASE_URL =
+  process.env.API_BASE_URL ?? process.env.NEXT_PUBLIC_API_BASE_URL;
+if (!API_BASE_URL) {
+  throw new Error("Env API_BASE_URL/NEXT_PUBLIC_API_BASE_URL não definida");
+}
 export const { signIn, signOut, auth } = NextAuth({
   providers: [
     Credentials({

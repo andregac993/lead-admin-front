@@ -1,20 +1,14 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
-import type { Session } from "next-auth";
-import { cache } from "react";
-import { auth } from "@/auth";
-import {
-  type CreateLeadInput,
-  createLeadSchema,
-  type UpdateLeadInput,
-  updateLeadSchema,
-} from "@/lib/validations/lead";
-import type { Lead, LeadDetailResponse, LeadsResponse } from "@/types/lead";
+import {revalidatePath} from "next/cache";
+import {redirect} from "next/navigation";
+import type {Session} from "next-auth";
+import {cache} from "react";
+import {auth} from "@/auth";
+import {type CreateLeadInput, createLeadSchema, type UpdateLeadInput, updateLeadSchema,} from "@/lib/validations/lead";
+import type {Lead, LeadDetailResponse, LeadsResponse} from "@/types/lead";
 
-const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3333";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL!;
 
 interface LeadActionResult {
   success: boolean;

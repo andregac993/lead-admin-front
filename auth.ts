@@ -2,10 +2,9 @@ import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import {loginSchema} from "@/lib/validations/auth";
 
-const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3333";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL!;
 
-export const { handlers, signIn, signOut, auth } = NextAuth({
+export const { signIn, signOut, auth } = NextAuth({
   providers: [
     Credentials({
       credentials: {

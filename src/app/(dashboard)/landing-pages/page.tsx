@@ -36,10 +36,6 @@ export default async function LandingPagesPage() {
                 Gerencie e monitore todas as suas landing pages em um só lugar
               </p>
             </div>
-            <Button size="lg" className="gap-2 shadow-sm">
-              <Plus className="size-4" />
-              Nova Landing Page
-            </Button>
           </div>
         </div>
       </div>

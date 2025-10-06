@@ -1,16 +1,10 @@
 "use server";
 
-import { AuthError } from "next-auth";
-import { signIn, signOut } from "@/auth";
-import {
-  type LoginFormData,
-  loginSchema,
-  type SignupFormData,
-  signupSchema,
-} from "@/lib/validations/auth";
+import {AuthError} from "next-auth";
+import {signIn, signOut} from "@/auth";
+import {type LoginFormData, loginSchema, type SignupFormData, signupSchema,} from "@/lib/validations/auth";
 
-const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3333";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL!;
 
 interface ActionResult {
   success?: boolean;

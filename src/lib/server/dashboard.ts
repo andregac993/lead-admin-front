@@ -1,13 +1,12 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
-import type { Session } from "next-auth";
-import { cache } from "react";
-import { auth } from "@/auth";
+import {revalidatePath} from "next/cache";
+import {redirect} from "next/navigation";
+import type {Session} from "next-auth";
+import {cache} from "react";
+import {auth} from "@/auth";
 
-const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3333";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL!;
 
 const getSession = cache(async (): Promise<Session> => {
   const session = await auth();

@@ -1,12 +1,16 @@
-// app/(auth)/layout.tsx
-export default function AuthLayout({
-                                       children,
-                                   }: {
-    children: React.ReactNode
+import { redirect } from "next/navigation";
+import { auth } from "@/auth";
+
+export default async function AuthLayout({
+  children,
+}: {
+  children: React.ReactNode;
 }) {
-    return (
-        <div className="min-h-screen bg-gray-50">
-            {children}
-        </div>
-    )
+  const session = await auth();
+
+  if (session) {
+    redirect("/dashboard");
+  }
+
+  return <div className="min-h-screen bg-gray-50">{children}</div>;
 }

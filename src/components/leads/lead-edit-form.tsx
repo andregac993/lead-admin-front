@@ -336,12 +336,6 @@ export function LeadEditForm({ lead, landingPageId }: LeadEditFormProps) {
           </CardHeader>
           <CardContent className="space-y-2 text-xs sm:text-sm text-muted-foreground px-4 sm:px-6">
             <div className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-2">
-              <span className="font-medium">ID do Lead:</span>
-              <code className="bg-muted px-2 py-1 rounded text-xs break-all">
-                {lead.id}
-              </code>
-            </div>
-            <div className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-2">
               <span className="font-medium">Criado em:</span>
               <span className="text-right">{formatDate(lead.createdAt)}</span>
             </div>
